@@ -27,12 +27,12 @@ final class EditEmployeeViewModelTests: XCTestCase {
         employee.hired = "10/22/23"
         employee.departure = ""
         employee.active = 0
-        employee.company = "COMPANY"
+        employee.companyID = 0
         XCTAssertNoThrow(viewModel?.processUpdate(employee: employee, type: .add))
     }
     
     func test_update() {
-        if let list = viewModel?.employeeManager?.fetch(name: "COMPANY"),
+        if let list = viewModel?.employeeManager?.fetch(company: 0),
            var employee = list.first {
             employee.name = "UPDATED NAME"
             XCTAssertNoThrow(viewModel?.processUpdate(employee: employee, type: .edit))

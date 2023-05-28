@@ -68,7 +68,7 @@ class EditEmployeeViewController: UIViewController {
                 employee.hired = dateHired.date.toString()
                 employee.departure = resignSwitch.isOn ? dateDeparture.date.toString() : ""
                 employee.active = resignSwitch.isOn ? 1 : 0
-                employee.company = company.name
+                employee.companyID = company.id
                 viewModel.processUpdate(employee: employee, type: type)
                 self.dismiss(animated: true)
             }

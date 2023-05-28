@@ -14,7 +14,7 @@ protocol EmployeeManagerSource: AnyObject {
     func create(employee: Employee)
     func update(employee: Employee)
     func delete(employee: Employee)
-    @discardableResult func fetch(name: String) -> [Employee]?
+    @discardableResult func fetch(company id: Int) -> [Employee]?
     func saveToJsonFile()
 }
 
@@ -31,41 +31,48 @@ class EmployeeManager: EmployeeManagerSource {
     }
     
     func initalize() {
+        all.removeAll()
+        employeeList.removeAll()
         let data = File.generateFromDirectory(dictionaryFromFile: Strings.FileNames.employee)
         if let companies = try? DictionaryDecoder().decode([Employee].self, from: data) {
-            //employeeList = companies.sorted(by: { $0.id > $1.id })
             all = companies.sorted(by: { $0.id > $1.id })
         }
     }
     
     func create(employee: Employee) {
-        employeeList.append(employee)
-        all.append(employee)
-        saveToJsonFile()
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.employeeList.append(employee)
+            self?.all.append(employee)
+            self?.saveToJsonFile()
+        }
     }
     
     func update(employee: Employee) {
-        if let index = employeeList.firstIndex(where: { $0.id == employee.id }) {
-            employeeList[index] = employee
-            saveToJsonFile()
-        }
-        if let index = all.firstIndex(where: { $0.id == employee.id }) {
-            all[index] = employee
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            if let index = self?.employeeList.firstIndex(where: { $0.id == employee.id }) {
+                self?.employeeList[index] = employee
+            }
+            if let index = self?.all.firstIndex(where: { $0.id == employee.id }) {
+                self?.all[index] = employee
+                self?.saveToJsonFile()
+            }
         }
     }
     
     func delete(employee: Employee) {
-        if let index = employeeList.firstIndex(where: { $0.id == employee.id }) {
-            employeeList.remove(at: index)
-            saveToJsonFile()
-        }
-        if let index = all.firstIndex(where: { $0.id == employee.id }) {
-            employeeList.remove(at: index)
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            if let index = self?.employeeList.firstIndex(where: { $0.id == employee.id }) {
+                self?.employeeList.remove(at: index)
+            }
+            if let index = self?.all.firstIndex(where: { $0.id == employee.id }) {
+                self?.all.remove(at: index)
+                self?.saveToJsonFile()
+            }
         }
     }
     
-    @discardableResult func fetch(name: String) -> [Employee]? {
-        let filteredEmployees = all.filter { $0.company == name }
+    @discardableResult func fetch(company id: Int) -> [Employee]? {
+        let filteredEmployees = all.filter { $0.companyID == id }
         employeeList = filteredEmployees
         
         return filteredEmployees
@@ -78,10 +85,8 @@ class EmployeeManager: EmployeeManagerSource {
     }
     
     var getNextID: Int {
-        let data = File.generateFromDirectory(dictionaryFromFile: Strings.FileNames.employee)
-        if let companies = try? DictionaryDecoder().decode([Employee].self, from: data) {
-            let count = companies.count
-            return count + 1
+        if !all.isEmpty {
+            return all.count + 1
         }
         return 0
     }

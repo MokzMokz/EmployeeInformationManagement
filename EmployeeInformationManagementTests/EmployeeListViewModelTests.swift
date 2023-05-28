@@ -22,7 +22,7 @@ final class EmployeeListViewModelTests: XCTestCase {
     func test_setupData() {
         XCTAssertNoThrow(viewModel?.initialize())
         
-        let company = Company(name: "Collabera", username: "Collabera", password: "Collabera")
+        let company = Company(name: "COLLABERA")
         XCTAssertNoThrow(viewModel?.setUpData(company: company))
     }
 }

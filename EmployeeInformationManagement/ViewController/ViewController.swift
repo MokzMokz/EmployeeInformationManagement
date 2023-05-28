@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
 
@@ -14,24 +15,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     
     let viewModel = ViewModel()
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        addObservers()
     }
 
-    @IBAction func pressedLoginButton(_ sender: Any) {
-        if  let userName = userName.text,
-            let password = password.text {
-            if let company = viewModel.processLogin(userName: userName, password: password) {
+    private func addObservers() {
+        viewModel.loginCompany.subscribe { company in
+            if let company = company {
                 self.navigationRouter.presentEmployee(company: company)
             } else {
                 self.showAlert(message: Strings.Dialog.incorrect, showCancel: false)
-               
             }
-        }
+        }.disposed(by: disposeBag)
     }
     
-    
+    @IBAction func pressedLoginButton(_ sender: Any) {
+        if  let userName = userName.text,
+            let password = password.text {
+            viewModel.processLogin(userName: userName, password: password)
+        }
+    }
 }
 

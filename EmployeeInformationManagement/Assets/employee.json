@@ -4,19 +4,19 @@
     "hired": "04/05/2011",
     "departure": "",
     "active": 1,
-    "company": "GCASH"
+    "company_id": 1
 }, {
     "id": 2,
     "name": "Mark Davis Crisostomo",
     "hired": "01/02/2023",
     "departure": "",
     "active": 1,
-    "company": "COLABERRA"
+    "company_id": 2
 }, {
     "id": 3,
     "name": "Afghanistan",
     "hired": "02/02/2022",
     "departure": "03/02/2023",
     "active": 0,
-    "company": "GOOGLE"
+    "company_id": 3
 }]

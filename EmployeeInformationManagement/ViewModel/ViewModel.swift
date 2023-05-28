@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RxRelay
 
 class ViewModel: NSObject {
     var companyList = [Company]()
+    var loginCompany: BehaviorRelay<Company?> = BehaviorRelay(value: nil)
     
     override init() {
         super.init()
@@ -24,13 +26,14 @@ class ViewModel: NSObject {
         companyList = companies
     }
     
-    func processLogin(userName: String, password: String) -> Company? {
-        if let result = companyList.first(where: { company in
-            company.username == userName && company.password == password
-        }){
-            return result
+    func processLogin(userName: String, password: String) {
+        guard let result = companyList.first(where: {
+            $0.credentials?.username == userName && $0.credentials?.password == password
+        }) else {
+            loginCompany.accept(nil)
+            return
         }
-        return nil
+        
+        loginCompany.accept(result)
     }
-    
 }

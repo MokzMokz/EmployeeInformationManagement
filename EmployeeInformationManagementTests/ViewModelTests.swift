@@ -20,7 +20,16 @@ final class ViewModelTests: XCTestCase {
     }
     
     func test_setupData() {
-        XCTAssertNoThrow(viewModel?.processLogin(userName: "Collabera", password: "Collabera"))
+        viewModel?.loginCompany.subscribe(onNext: { company in
+            XCTAssertNil(company)
+        }).dispose()
+        
+        viewModel?.processLogin(userName: "collabera", password: "collabera")
+        
+        viewModel?.loginCompany.subscribe(onNext: { company in
+            XCTAssertNotNil(company)
+            XCTAssertEqual(company?.name, "COLABERRA")
+        }).dispose()
     }
 
 }

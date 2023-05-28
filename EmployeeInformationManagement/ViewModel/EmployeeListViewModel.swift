@@ -19,6 +19,6 @@ class EmployeeListViewModel: NSObject {
     }
     
     func setUpData(company: Company) {
-        employeeManager?.fetch(name: company.name)
+        employeeManager?.fetch(company: company.id)
     }
 }

@@ -24,6 +24,6 @@ class EmployeeTableViewCell: UITableViewCell {
         name.text = employee?.name
         hired.text = "Hired: \(employee?.hired ?? "")"
         departure.text = "Departure: \(employee?.departure ?? "")"
-        resignSwitch.isOn = employee?.active == 1
+        resignSwitch.isOn = employee?.isActive ?? false
     }
 }

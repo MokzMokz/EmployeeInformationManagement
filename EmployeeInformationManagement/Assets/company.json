@@ -1,13 +1,22 @@
 [{
+    "id": 1,
     "company_name": "GCASH",
-    "username": "gcash",
-    "password": "gcash1"
+    "credentials": {
+        "username": "gcash",
+        "password": "gcash1"
+    }
 }, {
+    "id": 2,
     "company_name": "GOOGLE",
-    "username": "google",
-    "password": "google"
+    "credentials": {
+        "username": "google",
+        "password": "google"
+    }
 }, {
+    "id": 3,
     "company_name": "COLABERRA",
-    "username": "collabera",
-    "password": "collabera"
+    "credentials": {
+        "username": "collabera",
+        "password": "collabera"
+    }
 }]
