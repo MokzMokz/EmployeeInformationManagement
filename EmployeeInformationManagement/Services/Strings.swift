@@ -12,4 +12,12 @@ struct Strings {
         static let employee = "employee"
         static let company = "company"
     }
+    
+    struct Dialog {
+        static let incorrect = "Incorrect Credentials. Please try again later."
+    }
+    
+    struct Buttons {
+        static let cancel = "Cancel"
+    }
 }

@@ -1,0 +1,6 @@
+framework module Pods_EmployeeInformationManagement_EmployeeInformationManagementUITests {
+  umbrella header "Pods-EmployeeInformationManagement-EmployeeInformationManagementUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

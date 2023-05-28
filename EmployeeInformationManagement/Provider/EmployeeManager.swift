@@ -14,12 +14,11 @@ protocol EmployeeManagerSource: AnyObject {
     func create(employee: Employee)
     func update(employee: Employee)
     func delete(employee: Employee)
-    func fetch(name: String) -> [Employee]?
-    func saveToJsonFile(company: [Company])
+    @discardableResult func fetch(name: String) -> [Employee]?
+    func saveToJsonFile()
 }
 
-class EmployeeManager: NSObject {
-
+class EmployeeManager: EmployeeManagerSource {
     static let shared = EmployeeManager()
     private let fileManager = FileManager.default
     var list: BehaviorRelay<[Employee]> = BehaviorRelay(value: [])
@@ -42,7 +41,7 @@ class EmployeeManager: NSObject {
     func create(employee: Employee) {
         employeeList.append(employee)
         all.append(employee)
-        saveToJsonFile(initial: true)
+        saveToJsonFile()
     }
     
     func update(employee: Employee) {
@@ -72,7 +71,7 @@ class EmployeeManager: NSObject {
         return filteredEmployees
     }
     
-    func saveToJsonFile(initial: Bool = false) {
+    func saveToJsonFile() {
         if let content = DictionaryEncoder.stringResponse(all) {
             File.saveFile(content: content, fileName: Strings.FileNames.employee)
         }

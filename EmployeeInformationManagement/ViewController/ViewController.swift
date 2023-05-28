@@ -26,7 +26,8 @@ class ViewController: UIViewController {
             if let company = viewModel.processLogin(userName: userName, password: password) {
                 self.navigationRouter.presentEmployee(company: company)
             } else {
-                self.showAlert(message: "Incorrect Credentials. Please try again later.", showCancel: false)
+                self.showAlert(message: Strings.Dialog.incorrect, showCancel: false)
+               
             }
         }
     }

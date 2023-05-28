@@ -11,10 +11,10 @@ import RxCocoa
 
 class EmployeeListViewController: UIViewController {
 
-    private let viewModel = EmployeeListViewModel()
+    private let viewModel = EmployeeListViewModel(employeeManager: EmployeeManager.shared)
     private let employeeManager = EmployeeManager.shared
-    var company = Company()
     private var disposeBag = DisposeBag()
+    var company = Company()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,7 +37,7 @@ class EmployeeListViewController: UIViewController {
     
     private func setupUI() {
         self.title = company.name
-        employeeManager.initalize()
+        viewModel.initialize()
         employeeManager.list.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: EmployeeTableViewCell.reuseIdentifier, cellType: EmployeeTableViewCell.self)) { (_, employee, cell) in
 

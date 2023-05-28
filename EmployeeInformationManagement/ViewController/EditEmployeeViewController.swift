@@ -7,32 +7,33 @@
 
 import UIKit
 
-enum EditType {
-    case add
-    case edit
-}
-
 class EditEmployeeViewController: UIViewController {
-
-    var employee: Employee?
-    var company: Company?
-    var type: EditType = .edit
-    
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var dateHired: UIDatePicker!
     @IBOutlet weak var dateDeparture: UIDatePicker!
     @IBOutlet weak var resignSwitch: UISwitch!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
-    private let employeeManager = EmployeeManager.shared
     
+    var employee: Employee?
+    var company: Company?
+    var type: EditType = .edit
+    lazy var cancel: UIBarButtonItem = {
+        let cancel = UIBarButtonItem(title: Strings.Buttons.cancel, style: .plain, target: self, action: #selector(pressCancel))
+        return cancel
+    }()
+    
+    private let employeeManager = EmployeeManager.shared
+    private let viewModel = EditEmployeeViewModel(employeeManager: EmployeeManager.shared)
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.removeBackButtonTitle()
         setupUI()
     }
     
     private func setupUI() {
         title = employee?.name ?? ""
+        removeBackButtonTitle()
         
         dateHired.semanticContentAttribute = .forceRightToLeft
         dateHired.subviews.first?.semanticContentAttribute = .forceRightToLeft
@@ -41,10 +42,8 @@ class EditEmployeeViewController: UIViewController {
 
         switch type {
         case .add:
-            break
-            //cancelButton.isHidden = false
+            navigationItem.leftBarButtonItem = cancel
         case .edit:
-            //cancelButton.isHidden = true
             name.text = employee?.name
             resignSwitch.isOn = employee?.isActive ?? false
             dateDeparture.isEnabled = resignSwitch.isOn
@@ -63,14 +62,14 @@ class EditEmployeeViewController: UIViewController {
         switch type {
         case .add:
             if let company = company {
-                var new = Employee()
-                new.id = employeeManager.getNextID
-                new.name = name.text ?? ""
-                new.hired = dateHired.date.toString()
-                new.departure = resignSwitch.isOn ? dateDeparture.date.toString() : ""
-                new.active = resignSwitch.isOn ? 1 : 0
-                new.company = company.name
-                employeeManager.create(employee: new)
+                var employee = Employee()
+                employee.id = employeeManager.getNextID
+                employee.name = name.text ?? ""
+                employee.hired = dateHired.date.toString()
+                employee.departure = resignSwitch.isOn ? dateDeparture.date.toString() : ""
+                employee.active = resignSwitch.isOn ? 1 : 0
+                employee.company = company.name
+                viewModel.processUpdate(employee: employee, type: type)
                 self.dismiss(animated: true)
             }
         case .edit:
@@ -79,11 +78,10 @@ class EditEmployeeViewController: UIViewController {
                 employee.hired = dateHired.date.toString()
                 employee.departure = resignSwitch.isOn ? dateDeparture.date.toString() : ""
                 employee.active = resignSwitch.isOn ? 1 : 0
-                employeeManager.update(employee: employee)
+                viewModel.processUpdate(employee: employee, type: type)
                 self.navigationController?.popViewController(animated: true)
             }
         }
-        
     }
     
     @IBAction func pressCancel(_ sender: Any) {

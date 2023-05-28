@@ -8,10 +8,17 @@
 import UIKit
 import RxRelay
 class EmployeeListViewModel: NSObject {
+    weak var employeeManager: EmployeeManagerSource?
     
-    private let employeeManager = EmployeeManager.shared
-   
+    init(employeeManager: EmployeeManagerSource) {
+        self.employeeManager = employeeManager
+    }
+    
+    func initialize() {
+        employeeManager?.initalize()
+    }
+    
     func setUpData(company: Company) {
-        employeeManager.fetch(name: company.name)
+        employeeManager?.fetch(name: company.name)
     }
 }

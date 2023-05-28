@@ -10,6 +10,19 @@
 		21CA278CD7335DD91278141C /* Pods_EmployeeInformationManagement_EmployeeInformationManagementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C10D74F6016A80BACCAAD2 /* Pods_EmployeeInformationManagement_EmployeeInformationManagementUITests.framework */; };
 		3AB06ED3869F09097FA3C155 /* Pods_EmployeeInformationManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1D90F238F937B5C8D2AD6B /* Pods_EmployeeInformationManagement.framework */; };
 		AAA7FDF8E9667147E40406AB /* Pods_EmployeeInformationManagementTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0076550AFAC3063774ABCD /* Pods_EmployeeInformationManagementTests.framework */; };
+		DD4B711D2A22F42100D228AB /* EmployeeListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B711C2A22F42100D228AB /* EmployeeListViewModelTests.swift */; };
+		DD4B711E2A22F5D700D228AB /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4442A20B82100E13303 /* EmployeeListViewModel.swift */; };
+		DD4B711F2A22F5DB00D228AB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4332A208BD800E13303 /* ViewModel.swift */; };
+		DD4B71202A22F5E600D228AB /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F44C2A20FE6E00E13303 /* EmployeeManager.swift */; };
+		DD4B71212A22FB6300D228AB /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F43C2A20914900E13303 /* Employee.swift */; };
+		DD4B71222A22FB6600D228AB /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4362A208C6600E13303 /* Company.swift */; };
+		DD4B71232A22FC4A00D228AB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4302A208A3300E13303 /* File.swift */; };
+		DD4B71242A22FC4C00D228AB /* DictionaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4382A208F9C00E13303 /* DictionaryCodable.swift */; };
+		DD4B71252A22FC6400D228AB /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD58F48D2A21B1E0003F8139 /* Strings.swift */; };
+		DD4B71272A22FDFE00D228AB /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B71262A22FDFE00D228AB /* ViewModelTests.swift */; };
+		DD4B712B2A23021000D228AB /* EditEmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B712A2A23021000D228AB /* EditEmployeeViewModel.swift */; };
+		DD4B712D2A23039B00D228AB /* EditEmployeeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B712C2A23039B00D228AB /* EditEmployeeViewModelTests.swift */; };
+		DD4B712E2A2303BB00D228AB /* EditEmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B712A2A23021000D228AB /* EditEmployeeViewModel.swift */; };
 		DD58F48C2A217F9E003F8139 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD58F48B2A217F9E003F8139 /* Date+Extension.swift */; };
 		DD58F48E2A21B1E0003F8139 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD58F48D2A21B1E0003F8139 /* Strings.swift */; };
 		DD96F3F82A20797E00E13303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F3F72A20797E00E13303 /* AppDelegate.swift */; };
@@ -66,6 +79,10 @@
 		A2049087BB9A0166CE3B2BAA /* Pods-EmployeeInformationManagementTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeInformationManagementTests.debug.xcconfig"; path = "Target Support Files/Pods-EmployeeInformationManagementTests/Pods-EmployeeInformationManagementTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1D90F238F937B5C8D2AD6B /* Pods_EmployeeInformationManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeeInformationManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0E9ECD37936FFDCF71C796 /* Pods-EmployeeInformationManagementTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeInformationManagementTests.release.xcconfig"; path = "Target Support Files/Pods-EmployeeInformationManagementTests/Pods-EmployeeInformationManagementTests.release.xcconfig"; sourceTree = "<group>"; };
+		DD4B711C2A22F42100D228AB /* EmployeeListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModelTests.swift; sourceTree = "<group>"; };
+		DD4B71262A22FDFE00D228AB /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		DD4B712A2A23021000D228AB /* EditEmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployeeViewModel.swift; sourceTree = "<group>"; };
+		DD4B712C2A23039B00D228AB /* EditEmployeeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployeeViewModelTests.swift; sourceTree = "<group>"; };
 		DD58F48B2A217F9E003F8139 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DD58F48D2A21B1E0003F8139 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		DD96F3F42A20797E00E13303 /* EmployeeInformationManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeInformationManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +154,6 @@
 				A2049087BB9A0166CE3B2BAA /* Pods-EmployeeInformationManagementTests.debug.xcconfig */,
 				DC0E9ECD37936FFDCF71C796 /* Pods-EmployeeInformationManagementTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -197,6 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				DD96F40E2A20798000E13303 /* EmployeeInformationManagementTests.swift */,
+				DD4B711C2A22F42100D228AB /* EmployeeListViewModelTests.swift */,
+				DD4B71262A22FDFE00D228AB /* ViewModelTests.swift */,
+				DD4B712C2A23039B00D228AB /* EditEmployeeViewModelTests.swift */,
 			);
 			path = EmployeeInformationManagementTests;
 			sourceTree = "<group>";
@@ -249,6 +268,7 @@
 			children = (
 				DD96F4332A208BD800E13303 /* ViewModel.swift */,
 				DD96F4442A20B82100E13303 /* EmployeeListViewModel.swift */,
+				DD4B712A2A23021000D228AB /* EditEmployeeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -526,6 +546,7 @@
 				DD96F4432A20A80F00E13303 /* NavigationRouter.swift in Sources */,
 				DD96F42A2A207B3800E13303 /* EditEmployeeViewController.swift in Sources */,
 				DD96F4452A20B82100E13303 /* EmployeeListViewModel.swift in Sources */,
+				DD4B712B2A23021000D228AB /* EditEmployeeViewModel.swift in Sources */,
 				DD96F43D2A20914900E13303 /* Employee.swift in Sources */,
 				DD96F4392A208F9C00E13303 /* DictionaryCodable.swift in Sources */,
 				DD96F44A2A20B9A000E13303 /* UITableViewCell+Extensions.swift in Sources */,
@@ -545,6 +566,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4B711D2A22F42100D228AB /* EmployeeListViewModelTests.swift in Sources */,
+				DD4B71212A22FB6300D228AB /* Employee.swift in Sources */,
+				DD4B71252A22FC6400D228AB /* Strings.swift in Sources */,
+				DD4B711E2A22F5D700D228AB /* EmployeeListViewModel.swift in Sources */,
+				DD4B71242A22FC4C00D228AB /* DictionaryCodable.swift in Sources */,
+				DD4B71272A22FDFE00D228AB /* ViewModelTests.swift in Sources */,
+				DD4B712E2A2303BB00D228AB /* EditEmployeeViewModel.swift in Sources */,
+				DD4B711F2A22F5DB00D228AB /* ViewModel.swift in Sources */,
+				DD4B71222A22FB6600D228AB /* Company.swift in Sources */,
+				DD4B712D2A23039B00D228AB /* EditEmployeeViewModelTests.swift in Sources */,
+				DD4B71232A22FC4A00D228AB /* File.swift in Sources */,
+				DD4B71202A22F5E600D228AB /* EmployeeManager.swift in Sources */,
 				DD96F40F2A20798000E13303 /* EmployeeInformationManagementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

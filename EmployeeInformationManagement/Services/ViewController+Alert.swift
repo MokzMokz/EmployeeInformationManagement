@@ -8,7 +8,13 @@
 import Foundation
 import UIKit
 
-extension ViewController {
+extension UIViewController {
+    func removeBackButtonTitle() {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
     func showAlert(withTitle title: String = "",
                    message: String,
                    cancelTitle: String = "Cancel",
