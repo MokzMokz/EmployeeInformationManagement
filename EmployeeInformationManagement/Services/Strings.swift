@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Strings {
+    struct FileNames {
+        static let employee = "employee"
+        static let company = "company"
+    }
+}

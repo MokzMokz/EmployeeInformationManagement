@@ -1,13 +1,13 @@
 [{
-    "company_name": "Afghanistan",
-    "username": "+93",
-    "password": "AF"
+    "company_name": "GCASH",
+    "username": "gcash",
+    "password": "gcash1"
 }, {
-    "company_name": "Afghanistan",
-    "username": "+93",
-    "password": "AF"
+    "company_name": "GOOGLE",
+    "username": "google",
+    "password": "google"
 }, {
-    "company_name": "Afghanistan",
-    "username": "+93",
-    "password": "AF"
+    "company_name": "COLABERRA",
+    "username": "collabera",
+    "password": "collabera"
 }]

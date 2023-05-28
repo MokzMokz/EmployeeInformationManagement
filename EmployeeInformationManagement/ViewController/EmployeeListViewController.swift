@@ -6,24 +6,53 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class EmployeeListViewController: UIViewController {
 
+    private let viewModel = EmployeeListViewModel()
+    private let employeeManager = EmployeeManager.shared
+    var company = Company()
+    private var disposeBag = DisposeBag()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        setupData()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let indexPath = tableView.indexPathForSelectedRow,
+           segue.destination.isKind(of: EditEmployeeViewController.classForCoder()) {
+            if let controller = segue.destination as? EditEmployeeViewController {
+                controller.employee = employeeManager.employeeList[indexPath.row]
+            }
+        }
     }
-    */
+    
+    private func setupUI() {
+        self.title = company.name
+        employeeManager.initalize()
+        employeeManager.list.asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: EmployeeTableViewCell.reuseIdentifier, cellType: EmployeeTableViewCell.self)) { (_, employee, cell) in
 
+                cell.employee = employee
+        }.disposed(by: disposeBag)
+    }
+    
+    private func setupData() {
+        viewModel.setUpData(company: company)
+    }
+   
+    @IBAction func pressLogout(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    @IBAction func pressedAdd(_ sender: Any) {
+        self.navigationRouter.presentEditEmployee(company: company)
+    }
 }

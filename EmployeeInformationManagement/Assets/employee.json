@@ -1,0 +1,22 @@
+[{
+    "id": 1,
+    "name": "Mark Davis Crisostomo",
+    "hired": "04/05/2011",
+    "departure": "",
+    "active": 1,
+    "company": "GCASH"
+}, {
+    "id": 2,
+    "name": "Mark Davis Crisostomo",
+    "hired": "01/02/2023",
+    "departure": "",
+    "active": 1,
+    "company": "COLABERRA"
+}, {
+    "id": 3,
+    "name": "Afghanistan",
+    "hired": "02/02/2022",
+    "departure": "03/02/2023",
+    "active": 0,
+    "company": "GOOGLE"
+}]
