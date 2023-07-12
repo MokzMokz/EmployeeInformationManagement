@@ -23,7 +23,7 @@ class EditEmployeeViewController: UIViewController {
     }()
     
     private let employeeManager = EmployeeManager.shared
-    private let viewModel = EditEmployeeViewModel(employeeManager: EmployeeManager.shared)
+    var viewModel: EditEmployeeViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,7 @@ class EditEmployeeViewController: UIViewController {
                 employee.departure = resignSwitch.isOn ? dateDeparture.date.toString() : ""
                 employee.active = resignSwitch.isOn ? 1 : 0
                 employee.companyID = company.id
-                viewModel.processUpdate(employee: employee, type: type)
+                viewModel?.processUpdate(employee: employee, type: type)
                 self.dismiss(animated: true)
             }
         case .edit:
@@ -78,7 +78,7 @@ class EditEmployeeViewController: UIViewController {
                 employee.hired = dateHired.date.toString()
                 employee.departure = resignSwitch.isOn ? dateDeparture.date.toString() : ""
                 employee.active = resignSwitch.isOn ? 1 : 0
-                viewModel.processUpdate(employee: employee, type: type)
+                viewModel?.processUpdate(employee: employee, type: type)
                 self.navigationController?.popViewController(animated: true)
             }
         }

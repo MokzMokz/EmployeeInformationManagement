@@ -1,39 +1,42 @@
 //
-//  ViewModel.swift
+//  LoginManager.swift
 //  EmployeeInformationManagement
 //
-//  Created by phmacr on 5/26/23.
+//  Created by Collabera on 7/12/23.
 //
 
 import UIKit
-import RxRelay
 
-class ViewModel: NSObject {
+protocol LoginManagerSource: AnyObject {
+    func getAllLoginData()
+    func processLogin(userName: String, password: String) -> Company?
+}
+
+class LoginManager: LoginManagerSource {
+    static let shared = LoginManager()
     var companyList = [Company]()
-    var loginCompany: BehaviorRelay<Company?> = BehaviorRelay(value: nil)
     
-    override init() {
-        super.init()
-        setUpData()
+    
+    init() {
+        getAllLoginData()
     }
     
-    func setUpData() {
+    func getAllLoginData(){
         let data = File.generate(dictionaryFromFile: "company")
         guard let companies = try? DictionaryDecoder().decode([Company].self, from: data) else {
+            companyList.removeAll()
             return
         }
-        
         companyList = companies
     }
     
-    func processLogin(userName: String, password: String) {
+    func processLogin(userName: String, password: String) -> Company? {
         guard let result = companyList.first(where: {
             $0.credentials?.username == userName && $0.credentials?.password == password
         }) else {
-            loginCompany.accept(nil)
-            return
+            return nil
         }
         
-        loginCompany.accept(result)
+        return result
     }
 }

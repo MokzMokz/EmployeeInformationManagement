@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EmployeeInformationManagement" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginCoordinator" id="BYZ-38-t0r" customClass="LoginViewController" customModule="EmployeeInformationManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +69,7 @@
         <!--Employee List View Controller-->
         <scene sceneID="eVZ-hl-73E">
             <objects>
-                <viewController storyboardIdentifier="EmployeeListViewController" id="BBL-p7-9b8" customClass="EmployeeListViewController" customModule="EmployeeInformationManagement" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmployeeListCoordinator" id="BBL-p7-9b8" customClass="EmployeeListViewController" customModule="EmployeeInformationManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ed5-w3-m91">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +135,6 @@
                                             <outlet property="hired" destination="cbG-7p-MUT" id="JH0-JM-HhP"/>
                                             <outlet property="name" destination="9d1-dC-z1h" id="zHW-O9-ZwO"/>
                                             <outlet property="resignSwitch" destination="sJV-rH-gSy" id="727-7e-nEs"/>
-                                            <segue destination="FVt-TQ-yzd" kind="show" id="YB8-XB-i4q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -172,13 +172,13 @@
         <!--Edit Employee View Controller-->
         <scene sceneID="otq-Ge-VVT">
             <objects>
-                <viewController storyboardIdentifier="EditEmployeeViewController" id="FVt-TQ-yzd" customClass="EditEmployeeViewController" customModule="EmployeeInformationManagement" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditEmployeeCoordinator" id="FVt-TQ-yzd" customClass="EditEmployeeViewController" customModule="EmployeeInformationManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K6g-KL-mVX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FCG-u1-V9S">
-                                <rect key="frame" x="10" y="133" width="373" height="636"/>
+                                <rect key="frame" x="10" y="89" width="373" height="680"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l51-hY-ahy">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="18"/>
@@ -231,7 +231,7 @@
                                         </connections>
                                     </switch>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-gu-RTK">
-                                        <rect key="frame" x="0.0" y="275" width="373" height="361"/>
+                                        <rect key="frame" x="0.0" y="275" width="373" height="405"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -269,7 +269,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iK4-2B-KB3">
             <objects>
-                <navigationController storyboardIdentifier="EmployeeListViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="yMX-mg-SGY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yMX-mg-SGY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KDH-z6-Rh7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

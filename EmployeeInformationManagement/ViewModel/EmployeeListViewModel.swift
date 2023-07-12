@@ -7,8 +7,9 @@
 
 import UIKit
 import RxRelay
-class EmployeeListViewModel: NSObject {
+class EmployeeListViewModel: EmployeeListProtocol {
     weak var employeeManager: EmployeeManagerSource?
+    weak var employeeListCoordinatorDelegate: EmployeeListCoordinatorDelegate?
     
     init(employeeManager: EmployeeManagerSource) {
         self.employeeManager = employeeManager

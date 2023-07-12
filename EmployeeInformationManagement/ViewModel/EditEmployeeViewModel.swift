@@ -12,7 +12,7 @@ enum EditType {
     case edit
 }
 
-class EditEmployeeViewModel: NSObject {
+class EditEmployeeViewModel: EditEmployeeListProtocol {
 
     weak var employeeManager: EmployeeManagerSource?
     

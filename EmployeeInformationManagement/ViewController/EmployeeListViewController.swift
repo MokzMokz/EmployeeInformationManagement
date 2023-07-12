@@ -11,7 +11,7 @@ import RxCocoa
 
 class EmployeeListViewController: UIViewController {
 
-    private let viewModel = EmployeeListViewModel(employeeManager: EmployeeManager.shared)
+    var viewModel: EmployeeListViewModel?
     private let employeeManager = EmployeeManager.shared
     private var disposeBag = DisposeBag()
     var company = Company()
@@ -37,22 +37,36 @@ class EmployeeListViewController: UIViewController {
     
     private func setupUI() {
         self.title = company.name
-        viewModel.initialize()
+        viewModel?.initialize()
         employeeManager.list.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: EmployeeTableViewCell.reuseIdentifier, cellType: EmployeeTableViewCell.self)) { (_, employee, cell) in
 
                 cell.employee = employee
         }.disposed(by: disposeBag)
+        
+        
+        // Observe item selection events using RxSwift
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                // Handle item selection here
+                
+                if let employee = self?.employeeManager.employeeList[indexPath.row] {
+                    self?.viewModel?.employeeListCoordinatorDelegate?.editEmployee(with: employee)
+                }
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     private func setupData() {
-        viewModel.setUpData(company: company)
+        viewModel?.setUpData(company: company)
     }
    
     @IBAction func pressLogout(_ sender: Any) {
         self.dismiss(animated: true)
     }
     @IBAction func pressedAdd(_ sender: Any) {
-        self.navigationRouter.presentEditEmployee(company: company)
+        viewModel?.employeeListCoordinatorDelegate?.addEmployee()
+        //self.navigationRouter.presentEditEmployee(company: company)
     }
 }

@@ -12,7 +12,7 @@
 		AAA7FDF8E9667147E40406AB /* Pods_EmployeeInformationManagementTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0076550AFAC3063774ABCD /* Pods_EmployeeInformationManagementTests.framework */; };
 		DD4B711D2A22F42100D228AB /* EmployeeListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B711C2A22F42100D228AB /* EmployeeListViewModelTests.swift */; };
 		DD4B711E2A22F5D700D228AB /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4442A20B82100E13303 /* EmployeeListViewModel.swift */; };
-		DD4B711F2A22F5DB00D228AB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4332A208BD800E13303 /* ViewModel.swift */; };
+		DD4B711F2A22F5DB00D228AB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4332A208BD800E13303 /* LoginViewModel.swift */; };
 		DD4B71202A22F5E600D228AB /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F44C2A20FE6E00E13303 /* EmployeeManager.swift */; };
 		DD4B71212A22FB6300D228AB /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F43C2A20914900E13303 /* Employee.swift */; };
 		DD4B71222A22FB6600D228AB /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4362A208C6600E13303 /* Company.swift */; };
@@ -27,7 +27,7 @@
 		DD58F48E2A21B1E0003F8139 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD58F48D2A21B1E0003F8139 /* Strings.swift */; };
 		DD96F3F82A20797E00E13303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F3F72A20797E00E13303 /* AppDelegate.swift */; };
 		DD96F3FA2A20797E00E13303 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F3F92A20797E00E13303 /* SceneDelegate.swift */; };
-		DD96F3FC2A20797E00E13303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F3FB2A20797E00E13303 /* ViewController.swift */; };
+		DD96F3FC2A20797E00E13303 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F3FB2A20797E00E13303 /* LoginViewController.swift */; };
 		DD96F3FF2A20797E00E13303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD96F3FD2A20797E00E13303 /* Main.storyboard */; };
 		DD96F4012A20798000E13303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD96F4002A20798000E13303 /* Assets.xcassets */; };
 		DD96F4042A20798000E13303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD96F4022A20798000E13303 /* LaunchScreen.storyboard */; };
@@ -38,18 +38,24 @@
 		DD96F42A2A207B3800E13303 /* EditEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4292A207B3800E13303 /* EditEmployeeViewController.swift */; };
 		DD96F42C2A20884A00E13303 /* company.json in Resources */ = {isa = PBXBuildFile; fileRef = DD96F42B2A20884A00E13303 /* company.json */; };
 		DD96F4312A208A3300E13303 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4302A208A3300E13303 /* File.swift */; };
-		DD96F4342A208BD800E13303 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4332A208BD800E13303 /* ViewModel.swift */; };
+		DD96F4342A208BD800E13303 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4332A208BD800E13303 /* LoginViewModel.swift */; };
 		DD96F4372A208C6600E13303 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4362A208C6600E13303 /* Company.swift */; };
 		DD96F4392A208F9C00E13303 /* DictionaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4382A208F9C00E13303 /* DictionaryCodable.swift */; };
 		DD96F43B2A20905F00E13303 /* employee.json in Resources */ = {isa = PBXBuildFile; fileRef = DD96F43A2A20905F00E13303 /* employee.json */; };
 		DD96F43D2A20914900E13303 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F43C2A20914900E13303 /* Employee.swift */; };
 		DD96F43F2A2093E800E13303 /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F43E2A2093E800E13303 /* ViewController+Alert.swift */; };
-		DD96F4412A209D7F00E13303 /* Coordinators in Resources */ = {isa = PBXBuildFile; fileRef = DD96F4402A209D7F00E13303 /* Coordinators */; };
-		DD96F4432A20A80F00E13303 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4422A20A80F00E13303 /* NavigationRouter.swift */; };
 		DD96F4452A20B82100E13303 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4442A20B82100E13303 /* EmployeeListViewModel.swift */; };
 		DD96F4482A20B94D00E13303 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4472A20B94D00E13303 /* EmployeeTableViewCell.swift */; };
 		DD96F44A2A20B9A000E13303 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F4492A20B9A000E13303 /* UITableViewCell+Extensions.swift */; };
 		DD96F44D2A20FE6F00E13303 /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F44C2A20FE6E00E13303 /* EmployeeManager.swift */; };
+		E1AA08412A5E42C5000DE23C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA08402A5E42C5000DE23C /* Protocols.swift */; };
+		E1AA08482A5E4E3D000DE23C /* StoryBoard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA08472A5E4E3D000DE23C /* StoryBoard+Extensions.swift */; };
+		E1AA084B2A5E504F000DE23C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA084A2A5E504E000DE23C /* AppCoordinator.swift */; };
+		E1AA084E2A5E506E000DE23C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA084D2A5E506E000DE23C /* Coordinator.swift */; };
+		E1AA08512A5E53A4000DE23C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA08502A5E53A4000DE23C /* LoginCoordinator.swift */; };
+		E1AA08532A5E6CF2000DE23C /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA08522A5E6CF2000DE23C /* LoginManager.swift */; };
+		E1AA08552A5E7B21000DE23C /* EmployeeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA08542A5E7B21000DE23C /* EmployeeListCoordinator.swift */; };
+		E1AA08572A5E84FE000DE23C /* EditEmployeeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA08562A5E84FE000DE23C /* EditEmployeeCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +94,7 @@
 		DD96F3F42A20797E00E13303 /* EmployeeInformationManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeInformationManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD96F3F72A20797E00E13303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD96F3F92A20797E00E13303 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD96F3FB2A20797E00E13303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD96F3FB2A20797E00E13303 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD96F3FE2A20797E00E13303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD96F4002A20798000E13303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD96F4032A20798000E13303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,18 +108,24 @@
 		DD96F4292A207B3800E13303 /* EditEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployeeViewController.swift; sourceTree = "<group>"; };
 		DD96F42B2A20884A00E13303 /* company.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = company.json; sourceTree = "<group>"; };
 		DD96F4302A208A3300E13303 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		DD96F4332A208BD800E13303 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		DD96F4332A208BD800E13303 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DD96F4362A208C6600E13303 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		DD96F4382A208F9C00E13303 /* DictionaryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCodable.swift; sourceTree = "<group>"; };
 		DD96F43A2A20905F00E13303 /* employee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = employee.json; sourceTree = "<group>"; };
 		DD96F43C2A20914900E13303 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		DD96F43E2A2093E800E13303 /* ViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alert.swift"; sourceTree = "<group>"; };
-		DD96F4402A209D7F00E13303 /* Coordinators */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Coordinators; sourceTree = "<group>"; };
-		DD96F4422A20A80F00E13303 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		DD96F4442A20B82100E13303 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
 		DD96F4472A20B94D00E13303 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		DD96F4492A20B9A000E13303 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		DD96F44C2A20FE6E00E13303 /* EmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManager.swift; sourceTree = "<group>"; };
+		E1AA08402A5E42C5000DE23C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		E1AA08472A5E4E3D000DE23C /* StoryBoard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryBoard+Extensions.swift"; sourceTree = "<group>"; };
+		E1AA084A2A5E504E000DE23C /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E1AA084D2A5E506E000DE23C /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E1AA08502A5E53A4000DE23C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		E1AA08522A5E6CF2000DE23C /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		E1AA08542A5E7B21000DE23C /* EmployeeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListCoordinator.swift; sourceTree = "<group>"; };
+		E1AA08562A5E84FE000DE23C /* EditEmployeeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployeeCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +212,9 @@
 				DD96F4462A20B92E00E13303 /* View */,
 				DD96F4322A208AB000E13303 /* ViewModel */,
 				DD96F42E2A2089F100E13303 /* ViewController */,
+				E1AA084F2A5E5367000DE23C /* Coordinators */,
+				E1AA083F2A5E42AA000DE23C /* Protocols */,
+				E1AA08422A5E4B1F000DE23C /* BaseCoordinators */,
 				DD96F42D2A20886C00E13303 /* Assets */,
 				DD96F3FD2A20797E00E13303 /* Main.storyboard */,
 				DD96F4002A20798000E13303 /* Assets.xcassets */,
@@ -241,7 +256,7 @@
 		DD96F42E2A2089F100E13303 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DD96F3FB2A20797E00E13303 /* ViewController.swift */,
+				DD96F3FB2A20797E00E13303 /* LoginViewController.swift */,
 				DD96F4272A207B2B00E13303 /* EmployeeListViewController.swift */,
 				DD96F4292A207B3800E13303 /* EditEmployeeViewController.swift */,
 			);
@@ -255,10 +270,9 @@
 				DD96F4382A208F9C00E13303 /* DictionaryCodable.swift */,
 				DD96F43E2A2093E800E13303 /* ViewController+Alert.swift */,
 				DD96F4492A20B9A000E13303 /* UITableViewCell+Extensions.swift */,
-				DD96F4422A20A80F00E13303 /* NavigationRouter.swift */,
 				DD58F48B2A217F9E003F8139 /* Date+Extension.swift */,
 				DD58F48D2A21B1E0003F8139 /* Strings.swift */,
-				DD96F4402A209D7F00E13303 /* Coordinators */,
+				E1AA08472A5E4E3D000DE23C /* StoryBoard+Extensions.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -266,7 +280,7 @@
 		DD96F4322A208AB000E13303 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DD96F4332A208BD800E13303 /* ViewModel.swift */,
+				DD96F4332A208BD800E13303 /* LoginViewModel.swift */,
 				DD96F4442A20B82100E13303 /* EmployeeListViewModel.swift */,
 				DD4B712A2A23021000D228AB /* EditEmployeeViewModel.swift */,
 			);
@@ -294,8 +308,52 @@
 			isa = PBXGroup;
 			children = (
 				DD96F44C2A20FE6E00E13303 /* EmployeeManager.swift */,
+				E1AA08522A5E6CF2000DE23C /* LoginManager.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		E1AA083F2A5E42AA000DE23C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E1AA08402A5E42C5000DE23C /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E1AA08422A5E4B1F000DE23C /* BaseCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				E1AA08492A5E502B000DE23C /* AppCoordinator */,
+				E1AA084C2A5E5061000DE23C /* Contract */,
+			);
+			path = BaseCoordinators;
+			sourceTree = "<group>";
+		};
+		E1AA08492A5E502B000DE23C /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E1AA084A2A5E504E000DE23C /* AppCoordinator.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		E1AA084C2A5E5061000DE23C /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				E1AA084D2A5E506E000DE23C /* Coordinator.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		E1AA084F2A5E5367000DE23C /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				E1AA08502A5E53A4000DE23C /* LoginCoordinator.swift */,
+				E1AA08542A5E7B21000DE23C /* EmployeeListCoordinator.swift */,
+				E1AA08562A5E84FE000DE23C /* EditEmployeeCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,7 +470,6 @@
 				DD96F3FF2A20797E00E13303 /* Main.storyboard in Resources */,
 				DD96F42C2A20884A00E13303 /* company.json in Resources */,
 				DD96F43B2A20905F00E13303 /* employee.json in Resources */,
-				DD96F4412A209D7F00E13303 /* Coordinators in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,10 +597,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AA084B2A5E504F000DE23C /* AppCoordinator.swift in Sources */,
+				E1AA08572A5E84FE000DE23C /* EditEmployeeCoordinator.swift in Sources */,
 				DD96F4282A207B2B00E13303 /* EmployeeListViewController.swift in Sources */,
+				E1AA08552A5E7B21000DE23C /* EmployeeListCoordinator.swift in Sources */,
+				E1AA08482A5E4E3D000DE23C /* StoryBoard+Extensions.swift in Sources */,
 				DD96F4482A20B94D00E13303 /* EmployeeTableViewCell.swift in Sources */,
 				DD96F4312A208A3300E13303 /* File.swift in Sources */,
-				DD96F4432A20A80F00E13303 /* NavigationRouter.swift in Sources */,
 				DD96F42A2A207B3800E13303 /* EditEmployeeViewController.swift in Sources */,
 				DD96F4452A20B82100E13303 /* EmployeeListViewModel.swift in Sources */,
 				DD4B712B2A23021000D228AB /* EditEmployeeViewModel.swift in Sources */,
@@ -551,13 +611,17 @@
 				DD96F4392A208F9C00E13303 /* DictionaryCodable.swift in Sources */,
 				DD96F44A2A20B9A000E13303 /* UITableViewCell+Extensions.swift in Sources */,
 				DD58F48C2A217F9E003F8139 /* Date+Extension.swift in Sources */,
+				E1AA08512A5E53A4000DE23C /* LoginCoordinator.swift in Sources */,
 				DD58F48E2A21B1E0003F8139 /* Strings.swift in Sources */,
-				DD96F3FC2A20797E00E13303 /* ViewController.swift in Sources */,
+				DD96F3FC2A20797E00E13303 /* LoginViewController.swift in Sources */,
 				DD96F43F2A2093E800E13303 /* ViewController+Alert.swift in Sources */,
 				DD96F3F82A20797E00E13303 /* AppDelegate.swift in Sources */,
+				E1AA084E2A5E506E000DE23C /* Coordinator.swift in Sources */,
+				E1AA08412A5E42C5000DE23C /* Protocols.swift in Sources */,
+				E1AA08532A5E6CF2000DE23C /* LoginManager.swift in Sources */,
 				DD96F44D2A20FE6F00E13303 /* EmployeeManager.swift in Sources */,
 				DD96F3FA2A20797E00E13303 /* SceneDelegate.swift in Sources */,
-				DD96F4342A208BD800E13303 /* ViewModel.swift in Sources */,
+				DD96F4342A208BD800E13303 /* LoginViewModel.swift in Sources */,
 				DD96F4372A208C6600E13303 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,7 +637,7 @@
 				DD4B71242A22FC4C00D228AB /* DictionaryCodable.swift in Sources */,
 				DD4B71272A22FDFE00D228AB /* ViewModelTests.swift in Sources */,
 				DD4B712E2A2303BB00D228AB /* EditEmployeeViewModel.swift in Sources */,
-				DD4B711F2A22F5DB00D228AB /* ViewModel.swift in Sources */,
+				DD4B711F2A22F5DB00D228AB /* LoginViewModel.swift in Sources */,
 				DD4B71222A22FB6600D228AB /* Company.swift in Sources */,
 				DD4B712D2A23039B00D228AB /* EditEmployeeViewModelTests.swift in Sources */,
 				DD4B71232A22FC4A00D228AB /* File.swift in Sources */,

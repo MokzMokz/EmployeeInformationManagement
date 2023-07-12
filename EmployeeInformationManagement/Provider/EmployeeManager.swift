@@ -9,15 +9,6 @@ import UIKit
 import RxSwift
 import RxRelay
 
-protocol EmployeeManagerSource: AnyObject {
-    func initalize()
-    func create(employee: Employee)
-    func update(employee: Employee)
-    func delete(employee: Employee)
-    @discardableResult func fetch(company id: Int) -> [Employee]?
-    func saveToJsonFile()
-}
-
 class EmployeeManager: EmployeeManagerSource {
     static let shared = EmployeeManager()
     private let fileManager = FileManager.default
